@@ -19,8 +19,32 @@ class LLVM_LIBRARY_VISIBILITY TINYGPUTargetInfo : public TargetInfo {
             WIntType = UnsignedInt;
         }
 
-          ArrayRef<const char *> getGCCRegNames() const override;
+        ArrayRef<const char *> getGCCRegNames() const override;
+        void getTargetDefines(const LangOptions &Opts,
+                            MacroBuilder &Builder) const override;
+        BuiltinVaListKind getBuiltinVaListKind() const override{
+            return TargetInfo::VoidPtrBuiltinVaList;
+        }
+        ArrayRef<Builtin::Info> getTargetBuiltins() const override{
+            return None;
+        }      
+        bool validateAsmConstraint(const char *&Name,
+        TargetInfo::ConstraintInfo &info) const override{
+            return false;
+        }                  
+
+        const char* getClobbers() const override{
+            return "";
+        }
     };
+
+/*TODO:getTargetDefines()x
+    getTargetBuiltins()x
+    getBuiltinVaListKind()x
+    validateAsmConstraint()x
+    getClobbers();
+    getGCCReg() // written but check about warning
+*/
     }//End of namespace targets
 }//End of namespace clang
 
