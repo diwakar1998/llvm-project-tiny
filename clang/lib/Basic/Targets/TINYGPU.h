@@ -26,7 +26,7 @@ class LLVM_LIBRARY_VISIBILITY TINYGPUTargetInfo : public TargetInfo {
             return TargetInfo::VoidPtrBuiltinVaList;
         }
         ArrayRef<Builtin::Info> getTargetBuiltins() const override{
-            return None;
+            return nullptr;
         }      
         bool validateAsmConstraint(const char *&Name,
         TargetInfo::ConstraintInfo &info) const override{
@@ -34,7 +34,8 @@ class LLVM_LIBRARY_VISIBILITY TINYGPUTargetInfo : public TargetInfo {
         }                  
 
         const char* getClobbers() const override{
-            return "";
+            const char* tmp=nullptr;
+            return tmp;
         }
     };
 
