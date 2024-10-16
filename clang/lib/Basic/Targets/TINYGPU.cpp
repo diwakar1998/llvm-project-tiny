@@ -18,7 +18,7 @@ const char *const TINYGPUTargetInfo::GCCRegNames[] = {
 const TargetInfo::GCCRegAlias GCCRegAliases[] = {
     {{"zero"},"r0"},{{"one"},"r1"},{{"two"},"r2"},{{"three"},"r3"},{{"four"},"r4"},
     {{"five"},"r5"},{{"six"},"r6"},{{"seven"},"r7"},{{"eight"},"r8"},{{"nine"},"r9"},
-    {{"ten"},"r10"},{{"eleven"},"r11"},{{"twelve"},"r12"},{{"blockidx"},"r13"},{{"blockDim"},"r14"},
+    {{"ten"},"r10"},{{"eleven"},"r11"},{{"twelve"},"r12"},{{"blockidx"},"r13"},{{"blockdim"},"r14"},
     {{"threadidx"},"r15"}
 };
 
