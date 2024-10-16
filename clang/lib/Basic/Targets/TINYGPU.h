@@ -10,6 +10,18 @@
 
 namespace clang {
 namespace targets {
+    
+/*Need to implement the following virtual functions which are present in parent class TargetInfo
+    getTargetDefines()x
+    getTargetBuiltins()x
+    getBuiltinVaListKind()x
+    validateAsmConstraint()x
+    getClobbers();x
+    getGCCReg() x
+    getGCCRegAlias();x
+*/
+
+//The functions are defined such that the code compiles. Indetail implementation is yet to be done
 class LLVM_LIBRARY_VISIBILITY TINYGPUTargetInfo : public TargetInfo {
     static const char *const GCCRegNames[];
     static const char *const GCCRegAlias[];
@@ -38,14 +50,6 @@ class LLVM_LIBRARY_VISIBILITY TINYGPUTargetInfo : public TargetInfo {
         std::string_view getClobbers() const override { return ""; }
     };
 
-/*TODO:getTargetDefines()x
-    getTargetBuiltins()x
-    getBuiltinVaListKind()x
-    validateAsmConstraint()x
-    getClobbers();x
-    getGCCReg() x// written but check about warning
-    getGCCRegAlias();
-*/
     }//End of namespace targets
 }//End of namespace clang
 
