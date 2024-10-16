@@ -33,10 +33,7 @@ class LLVM_LIBRARY_VISIBILITY TINYGPUTargetInfo : public TargetInfo {
             return false;
         }                  
 
-        const char* getClobbers() const override{
-            const char* tmp=nullptr;
-            return tmp;
-        }
+        std::string_view getClobbers() const override { return ""; }
     };
 
 /*TODO:getTargetDefines()x
