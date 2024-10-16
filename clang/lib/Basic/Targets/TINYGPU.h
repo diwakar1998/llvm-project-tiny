@@ -10,7 +10,7 @@
 
 namespace clang {
 namespace targets {
-class TINYGPUTargetInfo : public TargetInfo {
+class LLVM_LIBRARY_VISIBILITY TINYGPUTargetInfo : public TargetInfo {
     static const char *const GCCRegNames[];
     public:
         TINYGPUTargetInfo(const llvm::Triple &Triple,const TargetOptions &)
