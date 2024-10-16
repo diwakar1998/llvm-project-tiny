@@ -26,7 +26,7 @@ class LLVM_LIBRARY_VISIBILITY TINYGPUTargetInfo : public TargetInfo {
             return TargetInfo::VoidPtrBuiltinVaList;
         }
         ArrayRef<Builtin::Info> getTargetBuiltins() const override{
-            return nullptr;
+            return llvm::ArrayRef<clang::Builtin::Info>();
         }      
         bool validateAsmConstraint(const char *&Name,
         TargetInfo::ConstraintInfo &info) const override{
