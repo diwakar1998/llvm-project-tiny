@@ -12,6 +12,7 @@ namespace clang {
 namespace targets {
 class LLVM_LIBRARY_VISIBILITY TINYGPUTargetInfo : public TargetInfo {
     static const char *const GCCRegNames[];
+    static const char *const GCCRegAlias[];
     public:
         TINYGPUTargetInfo(const llvm::Triple &Triple,const TargetOptions &)
         :TargetInfo(Triple){
@@ -20,6 +21,7 @@ class LLVM_LIBRARY_VISIBILITY TINYGPUTargetInfo : public TargetInfo {
         }
 
         ArrayRef<const char *> getGCCRegNames() const override;
+        ArrayRef<TargetInfo::GCCRegAlias> getGCCRegAliases() const override; 
         void getTargetDefines(const LangOptions &Opts,
                             MacroBuilder &Builder) const override;
         BuiltinVaListKind getBuiltinVaListKind() const override{
@@ -40,8 +42,9 @@ class LLVM_LIBRARY_VISIBILITY TINYGPUTargetInfo : public TargetInfo {
     getTargetBuiltins()x
     getBuiltinVaListKind()x
     validateAsmConstraint()x
-    getClobbers();
-    getGCCReg() // written but check about warning
+    getClobbers();x
+    getGCCReg() x// written but check about warning
+    getGCCRegAlias();
 */
     }//End of namespace targets
 }//End of namespace clang
