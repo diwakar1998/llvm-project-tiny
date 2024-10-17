@@ -16,7 +16,7 @@ TINYGPUToolChain::TINYGPUToolChain(const Driver &D, const llvm::Triple &Triple,
   // ProgramPaths are found via 'PATH' environment variable.
 }
 bool TINYGPUToolChain::isPICDefault() const { return true; }
-// bool TINYGPUToolChain::isPIEDefault() const { return false; }
+bool TINYGPUToolChain::isPIEDefault(const llvm::opt::ArgList &Args) const { return false; }
 bool TINYGPUToolChain::isPICDefaultForced() const { return true; }
 bool TINYGPUToolChain::SupportsProfiling() const { return false; }
 bool TINYGPUToolChain::hasBlocksRuntime() const { return false; }
