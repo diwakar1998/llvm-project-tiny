@@ -14,7 +14,8 @@ namespace toolchains {
     TINYGPUToolChain(const Driver &D, const llvm::Triple &Triple,
                     const llvm::opt::ArgList &Args);
     bool isPICDefault() const override;
-    bool isPIEDefault() const override;
+    bool isPIEDefault(const llvm::opt::ArgList &Args) const override {
+    return false;}
     bool isPICDefaultForced() const override;
     bool SupportsProfiling() const override;
     bool hasBlocksRuntime() const override;
